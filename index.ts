@@ -1,15 +1,15 @@
-import fastify from "fastify";
+import fastify from 'fastify'
 
-const server = fastify();
+const app = fastify()
 
-server.get("/", async (request, reply) => {
-  reply.code(200).send({ message: "Hello world!" });
-});
+app.get('/', async (request, reply) => {
+  reply.code(200).send({message: 'Hello mich!'})
+})
 
-server.listen(process.env.PORT || 8080, "0.0.0.0", (err, address) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
+app.listen(process.env.PORT || 3000, '0.0.0.0', (e, address) => {
+  if (e) {
+    console.error(e)
+    process.exit(1)
   }
-  console.log(`Server listening at ${address}`);
-});
+  console.log(`Server listening at ${address}`)
+})
